@@ -1,0 +1,27 @@
+job-name-borderguardSF = пограничник Солн. федерации
+job-description-borderguardSF = Охраняйте границы своей великой державы от лап грязных коммунистов.
+job-name-soldierSF = солдат ВС СФ
+job-description-soldierSF = Гордо служите на славу своей стране и выполняйте приказы командиров.
+job-name-CommanderSF = командир ВС СФ
+job-description-CommanderSF = Отдавайте приказы своим подчиненным и рационально распределяйте силы своей армии.
+job-name-SoldierCommie = солдат ВС СССП
+job-description-SoldierCommie = Отстаивайте идеалы великой идеи, будьте готовы отдать жизнь за страну.
+job-name-BorderGuardCommie = пограничник СССП
+job-description-BorderGuardCommie = Охраняйте границу своей великой державы от лап жадных капиталистов.
+job-name-CommanderCommie = командир ВС СССП
+job-description-CommanderCommie = Отдавайте приказы своим подчиненным и рационально распределяйте силы своей армии.
+job-name-BorderControlInspectorSF = инспектор погран. контроля СФ
+job-description-BorderControlInspectorSF = Papers, please. Контролируйте выезд граждан из своего государства, проверяйте документы, одобряйте или отклоняйте визы.
+job-name-BorderControlInspectorCommie = инспектор погран. контроля СССП
+job-description-BorderControlInspectorCommie = Papers, please. Контролируйте выезд граждан из своего государства, проверяйте документы, одобряйте или отклоняйте визы.
+job-name-MilitiaUSSPofficer = милиционер Вост. Бенгальска
+job-description-MilitiaUSSPofficer = Следите за порядком в городе, подчиняйтесь начальнику милиции.
+job-name-MilitiaUSSPBoss = начальник милиции
+job-description-MilitiaUSSPBoss = Отдавайте приказы подчиненным милиционерам Восточного Бенгальска.
+job-name-EngiUSSP = инженер Вост. Бенгальска
+job-description-EngiUSSP = Следите за электроснабжением города.
+
+department-SFArmy = вооруженные силы Солнечной федерации
+department-SFArmy-description = вооруженные силы Солнечной федерации.
+department-USSPArmy = вооруженные силы Союза советских социалистических планет
+department-USSPArmy-description = вооруженные силы Союза советских социалистических планет.

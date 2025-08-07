@@ -1,0 +1,16 @@
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: ClothingHeadHelmetTactical
+  name: FAST helmet
+  description: A new type of tactical helmet without ears.
+  components:
+  - type: Sprite
+    sprite: VXS1/Clothing/Head/Hard/tactical.rsi
+  - type: Clothing
+    sprite: VXS1/Clothing/Head/Hard/tactical.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.95

@@ -7,7 +7,11 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 16
+        Piercing: 20
+        Blunt: 6
+        Asphyxiation: 3
+  - type: StaminaDamageOnCollide
+    damage: 11
 
 - type: entity
   id: BulletPistolPractice
@@ -29,8 +33,9 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 2
-        Heat: 14
+        Asphyxiation: 3
+        Piercing: 20
+        Heat: 2
 
 - type: entity
   id: BulletPistolUranium
@@ -41,5 +46,5 @@
   - type: Projectile
     damage:
       types:
-        Radiation: 6
-        Piercing: 10
+        Piercing: 16
+        Blunt: 4

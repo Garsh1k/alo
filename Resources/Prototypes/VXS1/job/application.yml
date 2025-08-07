@@ -1,0 +1,949 @@
+- type: radioChannel
+  id: ArmySF
+  name: Army
+  keycode: 'й'
+  frequency: 1488
+  color: "#0e5e27"
+
+- type: radioChannel
+  id: ArmyCommie
+  name: Army
+  keycode: 'у'
+  frequency: 1161
+  color: "#b00b0b"
+
+- type: radioChannel
+  id: Militia
+  name: Militia
+  keycode: 'е'
+  frequency: 2280
+  color: "#0c0a6e"
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyArmySF
+  name: S.F. army encryption key
+  description: An encryption key used by soldiers.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Common
+    - ArmySF
+    defaultChannel: ArmySF
+  - type: Sprite
+    layers:
+    - state: crypt_gray
+    - state: common_label
+  - type: Tag
+    tags:
+    - EncryptionArmySF
+
+- type: Tag
+  id: EncryptionArmySF
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyArmyCommie
+  name: commie army encryption key
+  description: An encryption key used by soldiers.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Common
+    - ArmyCommie
+    defaultChannel: ArmyCommie
+  - type: Sprite
+    layers:
+    - state: crypt_gray
+    - state: common_label
+  - type: Tag
+    tags:
+    - EncryptionArmyCommie
+
+- type: Tag
+  id: EncryptionArmyCommie
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyMilitia
+  name: militia encryption key
+  description: An encryption key used by militiamen.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Common
+    - Militia
+    defaultChannel: Militia
+  - type: Sprite
+    layers:
+    - state: crypt_gray
+    - state: common_label
+  - type: Tag
+    tags:
+    - EncryptionMilitia
+
+- type: Tag
+  id: EncryptionMilitia
+
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetArmySF
+  name: soldier headset
+  components:
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/base.rsi
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyArmySF
+
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetArmyCommie
+  name: commie headset
+  components:
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/base.rsi
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyArmyCommie
+
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetMilitia
+  name: Militia headset
+  components:
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/base.rsi
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyMilitia
+
+- type: entity
+  parent: TelecomServer
+  id: TelecomServerFilledArmySF
+  suffix: ArmySF
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyArmySF
+
+- type: entity
+  parent: TelecomServer
+  id: TelecomServerFilledArmyCommie
+  suffix: ArmyCommie
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyArmyCommie
+
+- type: entity
+  parent: TelecomServer
+  id: TelecomServerFilledEncryptionKeyMilitia
+  suffix: Militia
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyMilitia
+
+- type: entity
+  parent: IDCardStandard
+  id: ArmySFIDCard
+  name: S.F. Army ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: centcom
+    - state: idcentcom
+  - type: Item
+    heldPrefix: blue
+  - type: PresetIdCard
+    job: SoldierSF
+
+- type: entity
+  parent: IDCardStandard
+  id: BorderGuardSFIDCard
+  name: S.F. Army border guard ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: centcom
+    - state: ert_security
+  - type: PresetIdCard
+    job: BorderGuardSF
+
+- type: entity
+  parent: IDCardStandard
+  id: ArmySFCommanderIDCard
+  name: S.F. Army Commander ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: gold
+    - state: ert_commander
+  - type: PresetIdCard
+    job: CommanderSF
+  - type: Item
+    heldPrefix: gold
+
+- type: job
+  id: BorderGuardSF
+  name: job-name-borderguardSF
+  description: job-description-borderguardSF
+  playTimeTracker: JobBorderGuardSF
+  startingGear: BorderGuardSFGear
+  icon: "JobIconNanotrasen"
+  canBeAntag: false
+  access:
+  - Maintenance
+  - ArmySF
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: BorderGuardSFGear
+  equipment:
+    shoes: ClothingShoesSwat
+    gloves: ClothingHandsGlovesCombat
+    id: BorderGuardSFIDCard
+    ears: ClothingHeadsetArmySF
+    jumpsuit: ClothingUniformJumpsuitSolarGray
+
+- type: job
+  id: SoldierSF
+  name: job-name-soldierSF
+  description: job-description-soldierSF
+  playTimeTracker: JobSoldierSF
+  startingGear: SoldierSFGear
+  icon: "JobIconNanotrasen"
+  canBeAntag: false
+  access:
+  - Maintenance
+  - ArmySF
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: SoldierSFGear
+  equipment:
+    shoes: ClothingShoesSwat
+    gloves: ClothingHandsGlovesCombat
+    id: ArmySFIDCard
+    ears: ClothingHeadsetArmySF
+    jumpsuit: ClothingUniformJumpsuitSolar
+
+- type: job
+  id: CommanderSF
+  name: job-name-CommanderSF
+  description: job-description-CommanderSF
+  playTimeTracker: JobCommanderSF
+  startingGear: CommanderSFGear
+  icon: "JobIconNanotrasen"
+  canBeAntag: false
+  access:
+  - Maintenance
+  - ArmySF
+  - CentralCommand
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: CommanderSFGear
+  equipment:
+    shoes: ClothingShoesSwat
+    gloves: ClothingHandsGlovesCombat
+    id: ArmySFCommanderIDCard
+    ears: ClothingHeadsetArmySF
+    jumpsuit: ClothingUniformJumpsuitSolarGold
+
+- type: department
+  id: SFArmy
+  name: department-SFArmy
+  description: department-SFArmy-description
+  color: "#2541ba"
+  roles:
+  - SoldierSF
+  - BorderGuardSF
+  - CommanderSF
+  - BorderControlInspectorSF
+
+- type: entity
+  parent: IDCardStandard
+  id: ArmyCommieIDCard
+  name: USSP Army ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: syndie
+  - type: PresetIdCard
+    job: SoldierCommie
+
+- type: entity
+  parent: IDCardStandard
+  id: BorderGuardCommieIDCard
+  name: USSP Army border guard ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: syndie
+  - type: PresetIdCard
+    job: BorderGuardCommie
+
+- type: entity
+  parent: IDCardStandard
+  id: ArmyCommieCommanderIDCard
+  name: USSP Army commander ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: syndie
+  - type: PresetIdCard
+    job: CommanderCommie
+
+- type: job
+  id: SoldierCommie
+  name: job-name-SoldierCommie
+  description: job-description-SoldierCommie
+  playTimeTracker: JobSoldierCommie
+  startingGear: SoldierCommieGear
+  icon: "JobIconSyndicate"
+  canBeAntag: false
+  access:
+  - Maintenance
+  - ArmyCommie
+
+- type: startingGear
+  id: SoldierCommieGear
+  equipment:
+    shoes: ClothingShoesBootsCombat
+    gloves: ClothingHandsGlovesCombat
+    id: ArmyCommieIDCard
+    belt: ClothingBeltSalvageWebbing
+    ears: ClothingHeadsetArmyCommie
+    jumpsuit: ClothingUniformJumpsuitTacticool
+
+- type: job
+  id: BorderGuardCommie
+  name: job-name-BorderGuardCommie
+  description: job-description-BorderGuardCommie
+  playTimeTracker: JobBorderGuardCommie
+  startingGear: BorderGuardCommieGear
+  icon: "JobIconSyndicate"
+  canBeAntag: false
+  access:
+  - Maintenance
+  - ArmyCommie
+
+- type: startingGear
+  id: BorderGuardCommieGear
+  equipment:
+    shoes: ClothingShoesBootsCombat
+    gloves: ClothingHandsGlovesCombat
+    id: BorderGuardCommieIDCard
+    ears: ClothingHeadsetArmyCommie
+    jumpsuit: ClothingUniformJumpsuitTacticool
+
+- type: job
+  id: CommanderCommie
+  name: job-name-CommanderCommie
+  description: job-description-CommanderCommie
+  playTimeTracker: JobCommanderCommie
+  startingGear: CommanderCommieGear
+  icon: "JobIconSyndicate"
+  canBeAntag: false
+  access:
+  - Maintenance
+  - ArmyCommie
+  - NuclearOperative
+  - SyndicateAgent
+
+- type: startingGear
+  id: CommanderCommieGear
+  equipment:
+    shoes: ClothingShoesBootsCombat
+    gloves: ClothingHandsGlovesCombat
+    id: ArmyCommieCommanderIDCard
+    ears: ClothingHeadsetArmyCommie
+    jumpsuit: ClothingUniformJumpsuitOperative
+
+- type: entity
+  parent: IDCardStandard
+  id: BorderControlInspectorSFIDCard
+  name: Solfed border control inspector ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: centcom
+    - state: idcentcom
+  - type: Item
+    heldPrefix: blue
+  - type: PresetIdCard
+    job: BorderControlInspectorSF
+
+- type: entity
+  parent: IDCardStandard
+  id: BorderControlInspectorCommieIDCard
+  name: USSP border control inspector ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: syndie
+  - type: PresetIdCard
+    job: BorderControlInspectorCommie
+
+- type: entity
+  parent: BaseSecurityPDA
+  id: BorderControlInspectorSFPDA
+  name: Solfed border control inspector PDA
+  description: Entry denied.
+  components:
+  - type: Pda
+    id: BorderControlInspectorSFIDCard
+    penSlot:
+      startingItem: LuxuryPen
+      priority: -1
+      whitelist:
+        tags:
+        - Write
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-lawyer
+  - type: PdaBorderColor
+    borderColor: "#6f6192"
+  - type: Icon
+    state: pda-lawyer
+
+- type: job
+  id: BorderControlInspectorSF
+  name: job-name-BorderControlInspectorSF
+  description: job-description-BorderControlInspectorSF
+  playTimeTracker: JobBorderControlInspectorSF
+  startingGear: BorderControlInspectorSFGear
+  icon: "JobIconNanotrasen"
+  canBeAntag: false
+  access:
+  - Service
+  - Lawyer
+  - Brig
+  - Maintenance
+
+- type: startingGear
+  id: BorderControlInspectorSFGear
+  equipment:
+    shoes: ClothingShoesBootsLaceup
+    eyes: ClothingEyesGlassesSunglasses
+    id: BorderControlInspectorSFPDA
+    ears: ClothingHeadsetSecurity
+    jumpsuit: ClothingUniformJumpsuitLawyerBlack
+    outerClothing: ClothingOuterCoatGentle
+
+- type: job
+  id: BorderControlInspectorCommie
+  name: job-name-BorderControlInspectorCommie
+  description: job-description-BorderControlInspectorCommie
+  playTimeTracker: JobBorderControlInspectorCommie
+  startingGear: BorderControlInspectorCommieGear
+  icon: "JobIconSyndicate"
+  canBeAntag: false
+  access:
+  - SyndicateAgent
+  - Maintenance
+
+- type: startingGear
+  id: BorderControlInspectorCommieGear
+  equipment:
+    shoes: ClothingShoesBootsLaceup
+    neck: ClothingNeckTieRed
+    eyes: ClothingEyesGlassesSunglasses
+    id: BorderControlInspectorCommieIDCard
+    ears: ClothingHeadsetAltSyndicate
+    jumpsuit: ClothingUniformJumpsuitLawyerBlack
+    outerClothing: ClothingOuterCoatGentle
+
+- type: department
+  id: USSPArmy
+  name: department-USSPArmy
+  description: department-USSPArmy-description
+  color: "#a10808"
+  weight: 100
+  roles:
+  - SoldierCommie
+  - BorderGuardCommie
+  - CommanderCommie
+  - BorderControlInspectorCommie
+
+- type: playTimeTracker
+  id: JobBorderGuardSF
+
+- type: playTimeTracker
+  id: JobSoldierSF
+
+- type: playTimeTracker
+  id: JobCommanderSF
+
+- type: playTimeTracker
+  id: JobSoldierCommie
+
+- type: playTimeTracker
+  id: JobBorderGuardCommie
+
+- type: playTimeTracker
+  id: JobCommanderCommie
+
+- type: playTimeTracker
+  id: JobBorderControlInspectorSF
+
+- type: playTimeTracker
+  id: JobBorderControlInspectorCommie
+
+- type: roleLoadout
+  id: JobSoldierSF
+  groups:
+  - JobSoldierSFHead
+  - JobSoldierSFEyes
+  - JobSoldierSFMask
+  - JobSoldierSFVest
+  - JobSoldierSFBelt
+
+- type: roleLoadout
+  id: JobBorderGuardSF
+  groups:
+  - JobSoldierSFHead
+  - JobSoldierSFEyes
+  - JobSoldierSFMask
+  - JobSoldierSFVest
+  - JobSoldierSFBelt
+
+- type: roleLoadout
+  id: JobCommanderSF
+  groups:
+  - JobSoldierSFHeadCommand
+  - JobSoldierSFEyes
+  - JobSoldierSFMask
+  - JobSoldierSFVest
+  - JobSoldierSFBelt
+
+- type: loadout
+  id: SoldierSFHelmet
+  equipment:
+    head: ClothingHeadHelmetTactical
+
+- type: loadout
+  id: SoldierSFBeret
+  equipment:
+    head: ClothingHeadHatBeretMerc
+
+- type: loadoutGroup
+  id: JobSoldierSFHead
+  name: head
+  minLimit: 0
+  loadouts:
+  - SoldierSFHelmet
+  - SoldierSFBeret
+  - SoldierSFSolid
+
+- type: loadout
+  id: SoldierSFSolid
+  equipment:
+    head: ClothingHeadHatSolidHeadband
+
+- type: loadout
+  id: SoldierSFSolidEyepatch
+  equipment:
+    eyes: ClothingEyesEyepatch
+
+- type: loadout
+  id: SoldierSFSunglasses
+  equipment:
+    eyes: ClothingEyesGlassesSunglasses
+
+- type: loadoutGroup
+  id: JobSoldierSFEyes
+  name: eyes
+  minLimit: 0
+  loadouts:
+  - SoldierSFSolidEyepatch
+  - SoldierSFSunglasses
+
+- type: loadout
+  id: SoldierSFGaiter
+  equipment:
+    mask: ClothingMaskNeckGaiter
+
+- type: loadoutGroup
+  id: JobSoldierSFMask
+  name: mask
+  minLimit: 0
+  loadouts:
+  - SoldierSFGaiter
+
+- type: loadout
+  id: SoldierSFMilWebbing
+  equipment:
+    belt: ClothingBeltMilitaryWebbing
+
+- type: loadout
+  id: SoldierWebbing
+  equipment:
+    belt: ClothingBeltSalvageWebbing
+
+- type: loadout
+  id: SoldierSFMercWebbing
+  equipment:
+    belt: ClothingBeltMercWebbing
+
+- type: loadoutGroup
+  id: JobSoldierSFBelt
+  name: belt
+  minLimit: 0
+  loadouts:
+  - SoldierSFMilWebbing
+  - SoldierWebbing
+  - SoldierSFMercWebbing
+
+- type: loadout
+  id: SoldierSFBeretCommand
+  equipment:
+    head: ClothingHeadHatBeretCommand
+
+- type: loadoutGroup
+  id: JobSoldierSFHeadCommand
+  name: head
+  minLimit: 0
+  loadouts:
+  - SoldierSFHelmet
+  - SoldierSFBeret
+  - SoldierSFSolid
+  - SoldierSFBeretCommand
+
+- type: loadout
+  id: SoldierBeret
+  equipment:
+    head: ClothingHeadHatBeret
+
+- type: loadout
+  id: SoldierHelmet
+  equipment:
+    head: ClothingHeadHelmetTactical
+
+- type: loadout
+  id: SoldierSolid
+  equipment:
+    head: ClothingHeadHatSolidHeadband
+
+- type: loadoutGroup
+  id: JobSoldierHead
+  name: head
+  minLimit: 0
+  loadouts:
+  - SoldierHelmet
+  - SoldierBeret
+  - SoldierSolid
+  - SoldierSFBeretCommand
+
+- type: roleLoadout
+  id: JobSoldierCommie
+  groups:
+  - JobSoldierHead
+  - JobSoldierSFEyes
+  - JobSoldierSFMask
+  - JobSoldierVest
+  - JobSoldierBelt
+
+- type: roleLoadout
+  id: JobBorderGuardCommie
+  groups:
+  - JobSoldierHead
+  - JobSoldierSFEyes
+  - JobSoldierSFMask
+  - JobSoldierVest
+  - JobSoldierBelt
+
+- type: roleLoadout
+  id: JobCommanderCommie
+  groups:
+  - JobSoldierHead
+  - JobSoldierSFEyes
+  - JobSoldierSFMask
+  - JobSoldierVest
+  - JobSoldierBelt
+
+- type: loadoutGroup
+  id: JobSoldierBelt
+  name: belt
+  minLimit: 0
+  loadouts:
+  - SoldierWebbing
+
+- type: loadout
+  id: SoldierSFVest1
+  equipment:
+    outerClothing: ClothingOuterArmorBulletproof
+
+- type: loadout
+  id: SoldierSFVest2
+  equipment:
+    outerClothing: ClothingOuterArmorBasic
+
+- type: loadout
+  id: SoldierVest1
+  equipment:
+    outerClothing: ClothingOuterVestWeb
+
+- type: loadout
+  id: SoldierVest2
+  equipment:
+    outerClothing: ClothingOuterVestWebMerc
+
+- type: loadoutGroup
+  id: JobSoldierSFVest
+  name: vest
+  minLimit: 0
+  loadouts:
+  - SoldierSFVest1
+  - SoldierSFVest2
+
+- type: loadoutGroup
+  id: JobSoldierVest
+  name: vest
+  minLimit: 0
+  loadouts:
+  - SoldierVest1
+  - SoldierVest2
+
+- type: entity
+  id: SpawnPointSoldierSF
+  parent: SpawnPointJobBase
+  name: Soldier SF
+  components:
+  - type: SpawnPoint
+    job_id: SoldierSF
+  - type: Sprite
+    layers:
+      - state: green
+
+- type: entity
+  id: SpawnPointBorderGuardSF
+  parent: SpawnPointJobBase
+  name: Border Guard SF
+  components:
+  - type: SpawnPoint
+    job_id: JobBorderGuardSF
+  - type: Sprite
+    layers:
+      - state: green
+
+- type: entity
+  id: SpawnPointCommanderSF
+  parent: SpawnPointJobBase
+  name: Commander SF
+  components:
+  - type: SpawnPoint
+    job_id: CommanderSF
+  - type: Sprite
+    layers:
+      - state: green
+
+- type: entity
+  id: SpawnPointSoldierCommie
+  parent: SpawnPointJobBase
+  name: Soldier Commie
+  components:
+  - type: SpawnPoint
+    job_id: SoldierCommie
+  - type: Sprite
+    layers:
+      - state: green
+
+- type: entity
+  id: SpawnPointBorderGuardCommie
+  parent: SpawnPointJobBase
+  name: Border Guard Commie
+  components:
+  - type: SpawnPoint
+    job_id: BorderGuardCommie
+  - type: Sprite
+    layers:
+      - state: green
+
+- type: entity
+  id: SpawnPointCommanderCommie
+  parent: SpawnPointJobBase
+  name: Commander Commie
+  components:
+  - type: SpawnPoint
+    job_id: CommanderCommie
+  - type: Sprite
+    layers:
+      - state: green
+
+- type: entity
+  id: SpawnPointBorderControlInspectorSF
+  parent: SpawnPointJobBase
+  name: SF Border Control Inspector
+  components:
+  - type: SpawnPoint
+    job_id: BorderControlInspectorSF
+  - type: Sprite
+    layers:
+      - state: green
+
+- type: entity
+  id: SpawnPointBorderControlInspectorCommie
+  parent: SpawnPointJobBase
+  name: Commie Border Control Inspector
+  components:
+  - type: SpawnPoint
+    job_id: BorderControlInspectorCommie
+  - type: Sprite
+    layers:
+      - state: green
+
+- type: job
+  id: MilitiaUSSPofficer
+  name: job-name-MilitiaUSSPofficer
+  description: job-description-MilitiaUSSPofficer
+  playTimeTracker: JobMilitiaUSSPofficer
+  startingGear: MilitiaUSSPofficerGear
+  icon: "JobIconSyndicate"
+  canBeAntag: false
+  access:
+  - Maintenance
+  - SyndicateAgent
+
+- type: startingGear
+  id: MilitiaUSSPofficerGear
+  equipment:
+    shoes: ClothingShoesBootsLaceup
+    id: MilitiaUSSPofficerIDCard
+    ears: ClothingHeadsetMilitia
+    jumpsuit: ClothingUniformJumpsuitAerostatic
+    back: ClothingBackpackSatchelLeather
+    neck: ClothingNeckUSSPPin
+    outerClothing: ClothingOuterWinterPilot
+    belt: ClothingBeltSecurityFilled
+
+- type: entity
+  parent: IDCardStandard
+  id: MilitiaUSSPofficerIDCard
+  name: USSP militia ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: syndie
+  - type: PresetIdCard
+    job: MilitiaUSSPofficer
+
+- type: job
+  id: MilitiaUSSPBoss
+  name: job-name-MilitiaUSSPBoss
+  description: job-description-MilitiaUSSPBoss
+  playTimeTracker: JobMilitiaUSSPBoss
+  startingGear: MilitiaUSSPBossGear
+  icon: "JobIconSyndicate"
+  canBeAntag: false
+  access:
+  - Maintenance
+  - SyndicateAgent
+  - NuclearOperative
+
+- type: startingGear
+  id: MilitiaUSSPBossGear
+  equipment:
+    shoes: ClothingShoesBootsLaceup
+    id: MilitiaUSSPofficerIDCard
+    ears: ClothingHeadsetMilitia
+    eyes: ClothingEyesGlassesSunglasses
+    jumpsuit: ClothingUniformJumpsuitHoSBlack
+    back: ClothingBackpackSatchelLeather
+    neck: ClothingNeckUSSPPin
+    outerClothing: ClothingOuterWinterPilot
+    belt: ClothingBeltSecurityFilled
+    head: ClothingHeadHatSyndieMAA
+
+- type: entity
+  parent: IDCardStandard
+  id: MilitiaUSSPBossIDCard
+  name: USSP militia boss ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: syndie
+  - type: PresetIdCard
+    job: MilitiaUSSPBoss
+
+- type: entity
+  id: SpawnPointMilitiaUSSPofficer
+  parent: SpawnPointJobBase
+  name: militia officer
+  components:
+  - type: SpawnPoint
+    job_id: MilitiaUSSPofficer
+  - type: Sprite
+    layers:
+      - state: green
+
+- type: entity
+  id: SpawnPointMilitiaUSSPBoss
+  parent: SpawnPointJobBase
+  name: Militia Boss
+  components:
+  - type: SpawnPoint
+    job_id: MilitiaUSSPBoss
+  - type: Sprite
+    layers:
+      - state: green
+
+- type: job
+  id: EngiUSSP
+  parent: StationEngineer
+  name: job-name-EngiUSSP
+  description: job-description-EngiUSSP
+  playTimeTracker: JobEngiUSSP
+  startingGear: EngiUSSPGear
+  icon: "JobIconSyndicate"
+  canBeAntag: false
+
+- type: startingGear
+  id: EngiUSSPGear
+  equipment:
+    shoes: ClothingShoesBootsWork
+    id: EngiUSSPIDCard
+    ears: ClothingHeadsetAltSyndicate
+    jumpsuit: ClothingUniformJumpsuitEngineeringHazard
+    back: ClothingBackpackSatchelLeather
+    neck: ClothingNeckUSSPPin
+    belt: ClothingBeltUtilityEngineering
+    outerClothing: ClothingOuterVestHazard
+
+- type: entity
+  parent: IDCardStandard
+  id: EngiUSSPIDCard
+  name: USSP Engineer ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: syndie
+  - type: PresetIdCard
+    job: EngiUSSP
+
+- type: entity
+  id: SpawnPointEngiUSSP
+  parent: SpawnPointJobBase
+  name: Engi USSP
+  components:
+  - type: SpawnPoint
+    job_id: EngiUSSP
+  - type: Sprite
+    layers:
+      - state: green

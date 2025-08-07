@@ -1,3 +1,11 @@
 - type: accessLevel
   id: CentralCommand
   name: id-card-access-level-central-command
+
+- type: accessLevel
+  id: ArmySF
+  name: S.F. Army
+
+- type: accessLevel
+  id: ArmyCommie
+  name: USSP Army

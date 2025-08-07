@@ -131,6 +131,8 @@
     - Xenoborg
     - GenpopEnter
     - GenpopLeave
+    - ArmySF
+    - ArmyCommie
     privilegedIdSlot:
       name: id-card-console-privileged-id
       startingItem: UniversalIDCard

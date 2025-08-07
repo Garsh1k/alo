@@ -436,18 +436,18 @@
       tags:
       - NukeOpsUplink
 
-- type: listing
-  id: UplinkClusterGrenade
-  name: uplink-cluster-grenade-name
-  description: uplink-cluster-grenade-desc
-  productEntity: ClusterGrenade
-  discountCategory: usualDiscounts
-  discountDownTo:
-    Telecrystal: 5
-  cost:
-    Telecrystal: 8
-  categories:
-  - UplinkExplosives
+#- type: listing
+#  id: UplinkClusterGrenade
+#  name: uplink-cluster-grenade-name
+#  description: uplink-cluster-grenade-desc
+#  productEntity: ClusterGrenade
+#  discountCategory: usualDiscounts
+#  discountDownTo:
+#    Telecrystal: 5
+#  cost:
+#    Telecrystal: 8
+#  categories:
+#  - UplinkExplosives
 
 - type: listing
   id: UplinkGrenadeShrapnel

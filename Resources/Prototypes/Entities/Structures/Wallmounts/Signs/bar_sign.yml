@@ -296,3 +296,12 @@
   components:
   - type: BarSign
     current: WhiskeyEchoes
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignBlueShampour
+  name: BlueShampour
+  description: International bar.
+  components:
+  - type: BarSign
+    current: BlueShampour

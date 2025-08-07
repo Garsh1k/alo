@@ -672,8 +672,8 @@
     minimumPlayers: 1
     maxOccurrences: 2
     weight: 10
-  - type: RandomSpawnRule
-    prototype: RandomSatchelSpawner
+#  - type: RandomSpawnRule
+#    prototype: RandomSatchelSpawner
 
 - type: entity
   parent: BaseGameRule

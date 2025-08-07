@@ -1429,3 +1429,22 @@
   components:
   - type: Sprite
     state: ntmining
+
+- type: entity
+  parent: BaseSign
+  id: SignBorder
+  name: border sign
+  description: Sign warning of boundary ahead.
+  components:
+  - type: Sprite
+    state: border
+
+- type: entity
+  parent: BaseSign
+  id: SignBorder1
+  name: border sign
+  description: Border crossing warning sign.
+  components:
+  - type: Sprite
+    sprite: Structures/Wallmounts/signs64.rsi
+    state: border1

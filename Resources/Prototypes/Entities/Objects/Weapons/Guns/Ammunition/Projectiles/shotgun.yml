@@ -10,8 +10,11 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 40
+        Piercing: 28
         Structural: 15
+        Blunt: 22
+  - type: StaminaDamageOnCollide
+    damage: 25
 
 
 - type: entity
@@ -28,7 +31,7 @@
       types:
         Blunt: 10
   - type: StaminaDamageOnCollide
-    damage: 40 # 3 hits to stun
+    damage: 50 # 3 hits to stun . нет 40 урона говно надо 50 по старинке пидарасы
 
 - type: entity
   id: PelletShotgun
@@ -53,8 +56,8 @@
   components:
   - type: ProjectileSpread
     proto: PelletShotgun
-    count: 6
-    spread: 15
+    count: 12
+    spread: 5
 
 - type: entity
   id: PelletShotgunIncendiary

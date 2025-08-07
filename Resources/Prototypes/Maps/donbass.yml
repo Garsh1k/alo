@@ -1,0 +1,53 @@
+# НАПОМИНАНИЕ САМОМУ СЕБЕ В КОМПОНЕНТЕ БЕКОМЕС СТАТИОН ВПИСЫВАТЬ ТОТ ЖЕ АЙДИ ЧТО И АЙДИ ГЕЙМ МАП В ПРОТОТИПЕ КАРТЫ ГДЕ ДЖОБКИ ХУЕБКИ ПОШЕЛ НАХУЙ
+- type: gameMap
+  id: Donbass
+  mapName: 'Bengalsk'
+  mapPath: /Maps/VXS/donbass.yml
+  minPlayers: 0
+  maxPlayers: 100
+  stations:
+    Donbass:
+      stationProto: NanotrasenStationNoArrivals
+      components:
+       - type: StationJobs
+         availableJobs:
+           # command
+           Captain: [ 1, 1 ]
+           #service
+           HeadOfPersonnel: [ 1, 1 ]
+           Bartender: [ 2, 2 ]
+           Janitor: [ 1, 1 ]
+           ServiceWorker: [ 2, 2 ]
+           #engineering
+           ChiefEngineer: [ 1, 1 ]
+           StationEngineer: [ 2, 4 ]
+           TechnicalAssistant: [ 2, 2 ]
+           #medical
+           ChiefMedicalOfficer: [ 1, 1 ]
+           Chemist: [ 2, 2 ]
+           MedicalDoctor: [ 4, 6 ]
+           Paramedic: [ 1, 1 ]
+           MedicalIntern: [ 2, 2 ]
+           #security
+           HeadOfSecurity: [ 1, 1 ]
+           Warden: [ 1, 1 ]
+           SecurityOfficer: [ 3, 3 ]
+           SecurityCadet: [ 2, 2 ]
+           #supply
+           Quartermaster: [ 1, 1 ]
+           CargoTechnician: [ 3, 4 ]
+           #civilian
+           Passenger: [ -1, -1 ]
+           #SFarmy
+           CommanderSF: [ 1, 1 ]
+           SoldierSF: [ 7, 7 ]
+           BorderGuardSF: [ 3, 3 ]
+           BorderControlInspectorSF: [ 2, 2 ]
+           #USSParmy
+           CommanderCommie: [ 1, 1 ]
+           SoldierCommie: [ 7, 7 ]
+           BorderGuardCommie: [ 3, 3 ]
+           BorderControlInspectorCommie: [ 2, 2 ]
+           MilitiaUSSPBoss: [ 1, 1 ]
+           MilitiaUSSPofficer: [ 4, 4 ]
+           EngiUSSP: [ 2, 4 ]

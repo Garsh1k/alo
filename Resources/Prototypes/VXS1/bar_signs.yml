@@ -1,0 +1,7 @@
+- type: barSign
+  id: BlueShampour
+  name: BlueShampour
+  icon:
+    sprite: Structures/Wallmounts/barsign.rsi
+    state: blueshampour
+  description: International bar.

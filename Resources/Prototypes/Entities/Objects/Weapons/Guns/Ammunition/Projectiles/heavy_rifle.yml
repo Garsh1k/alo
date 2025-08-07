@@ -7,7 +7,11 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 19
+        Piercing: 26
+        Blunt: 12
+        Asphyxiation: 5
+  - type: StaminaDamageOnCollide
+    damage: 17
 
 - type: entity
   id: BulletMinigun

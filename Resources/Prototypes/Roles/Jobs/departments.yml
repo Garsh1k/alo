@@ -87,6 +87,7 @@
   - ChiefEngineer
   - StationEngineer
   - TechnicalAssistant
+  - EngiUSSP
 
 - type: department
   id: Medical
@@ -115,6 +116,8 @@
   - Detective
   - Warden
   - Brigmedic # Corvax-Brigmedic
+  - MilitiaUSSPBoss
+  - MilitiaUSSPofficer
 
 - type: department
   id: Science

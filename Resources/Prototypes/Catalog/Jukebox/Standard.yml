@@ -39,3 +39,57 @@
   name: PigeonBeans - Sunset
   path:
     path: /Audio/Jukebox/sunset.ogg
+
+- type: jukebox
+  id: nigger
+  name: Alabama nigger
+  path:
+    path: /Audio/Jukebox/alabama-nigger.ogg
+
+- type: jukebox
+  id: hitler
+  name: Am Adolf Hitler platz
+  path:
+    path: /Audio/Jukebox/Am-Adolf-Hitler-Platz.ogg
+
+- type: jukebox
+  id: jobApplication
+  name: Job
+  path:
+    path: /Audio/Jukebox/Job_1.ogg
+
+- type: jukebox
+  id: snakeeater
+  name: Snake Eater
+  path:
+    path: /Audio/Jukebox/snake-eater.ogg
+
+- type: jukebox
+  id: teamspirit
+  name: СЕРЕГА ПИРАТ - TEAM SPIRIT
+  path:
+    path: /Audio/Jukebox/team-spirit(1).ogg
+
+- type: jukebox
+  id: soldtheworld
+  name: Midge Ure - The man who sold the word
+  path:
+    path: /Audio/Jukebox/the-man-who-sold-the-world.ogg
+
+- type: jukebox
+  id: soldaten
+  name: Wenn die soldaten
+  path:
+    path: /Audio/Jukebox/wenn-die-soldaten.ogg
+
+- type: jukebox
+  id: butirka
+  name: Бутырка - Какая осень в лагерях
+  path:
+    path: /Audio/Jukebox/какая-осень-в-лагерях(1).ogg
+
+- type: jukebox
+  id: moybike
+  name: СЕРЕГА ПИРАТ - Мой байк
+  path:
+    path: /Audio/Jukebox/мой-байк(1).ogg
